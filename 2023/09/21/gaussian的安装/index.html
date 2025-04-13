@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>gaussian的安装 | EGG-ss Blog</title><meta name="author" content="菜菜菜鸡_蛋"><meta name="copyright" content="菜菜菜鸡_蛋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="win中的安装与配置 💡 win中的配置大致包含3~4步  安装与激活 环境变量配置 测试 Gauss View的安装与配置   安装与激活解压64bit win.zip压缩包 运行setup.exe  此时，页面将要求输入Name Company Serial Name Company依照需求或实际情况填写即可 Serial依照压缩包中的SN.txt中填写  Next直到选择安装路径，选择安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gaussian的安装">
+<meta property="og:url" content="https://eggle0v0.github.io/2023/09/21/gaussian%E7%9A%84%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:site_name" content="EGG-ss Blog">
+<meta property="og:description" content="win中的安装与配置 💡 win中的配置大致包含3~4步  安装与激活 环境变量配置 测试 Gauss View的安装与配置   安装与激活解压64bit win.zip压缩包 运行setup.exe  此时，页面将要求输入Name Company Serial Name Company依照需求或实际情况填写即可 Serial依照压缩包中的SN.txt中填写  Next直到选择安装路径，选择安装">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eggle0v0.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2023-09-21T08:12:00.000Z">
+<meta property="article:modified_time" content="2025-04-13T17:58:16.141Z">
+<meta property="article:author" content="菜菜菜鸡_蛋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eggle0v0.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "gaussian的安装",
+  "url": "https://eggle0v0.github.io/2023/09/21/gaussian%E7%9A%84%E5%AE%89%E8%A3%85/",
+  "image": "https://eggle0v0.github.io/img/avatar.jpg",
+  "datePublished": "2023-09-21T08:12:00.000Z",
+  "dateModified": "2025-04-13T17:58:16.141Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "菜菜菜鸡_蛋",
+      "url": "https://eggle0v0.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/./img/favicon.jpg"><link rel="canonical" href="https://eggle0v0.github.io/2023/09/21/gaussian%E7%9A%84%E5%AE%89%E8%A3%85/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'gaussian的安装',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/mycss.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(./img/bg2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-file-text"></i><span> Blog</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Linux/"><i class="fa-fw fas fa-linux"></i><span> Linux</span></a></li><li><a class="site-page child" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/"><i class="fa-fw fas fa-th"></i><span> 环境配置与使用</span></a></li><li><a class="site-page child" href="/categories/Code/"><i class="fa-fw fas fa-code"></i><span> Code</span></a></li><li><a class="site-page child" href="/categories/%E7%BD%91%E7%BB%9C/"><i class="fa-fw fas fa-wifi"></i><span> 网络</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div></div></div></div><div class="post type-Application" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">EGG-ss Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">gaussian的安装</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-file-text"></i><span> Blog</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Linux/"><i class="fa-fw fas fa-linux"></i><span> Linux</span></a></li><li><a class="site-page child" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/"><i class="fa-fw fas fa-th"></i><span> 环境配置与使用</span></a></li><li><a class="site-page child" href="/categories/Code/"><i class="fa-fw fas fa-code"></i><span> Code</span></a></li><li><a class="site-page child" href="/categories/%E7%BD%91%E7%BB%9C/"><i class="fa-fw fas fa-wifi"></i><span> 网络</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">gaussian的安装</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-21T08:12:00.000Z" title="发表于 2023-09-21 16:12:00">2023-09-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-13T17:58:16.141Z" title="更新于 2025-04-14 01:58:16">2025-04-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/">环境配置与使用</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="win中的安装与配置"><a href="#win中的安装与配置" class="headerlink" title="win中的安装与配置"></a>win中的安装与配置</h2><blockquote>
+<p>💡 win中的配置大致包含3~4步</p>
+<ol>
+<li>安装与激活</li>
+<li>环境变量配置</li>
+<li>测试</li>
+<li>Gauss View的安装与配置</li>
+</ol>
+</blockquote>
+<h3 id="安装与激活"><a href="#安装与激活" class="headerlink" title="安装与激活"></a>安装与激活</h3><p>解压64bit win.zip压缩包</p>
+<p>运行setup.exe</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695220924626-01bc76f9-c20e-4c3b-9b59-0ee95ccee1f7.png"></p>
+<p>此时，页面将要求输入Name Company Serial</p>
+<p>Name Company依照需求或实际情况填写即可</p>
+<p>Serial依照压缩包中的SN.txt中填写</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695220985964-609bf0ab-e360-4a44-a248-701dcf0cb51c.png"></p>
+<p>Next直到选择安装路径，选择安装路径</p>
+<p>建议先新建一个文件夹用于放置G16W，这对后续环境变量的配置有一定影响<br>前面的路径可以自行挑选<br><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695222330292-9371d75f-a8b5-4457-b1f7-e59ec98985e6.png" alt="请牢记安装的路径，这将对环境变量的配置造成影响"></p>
+<p>接下来Install并等待软件安装完成</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695221434640-b8e1bed8-9e86-4a98-b665-3077ba7d527d.png"></p>
+<p><font style="background-color:#FBDE28;">完成安装后会要求选择Scratch文件夹，直接选择G16W里面的那个文件夹就好，不需要修改</font></p>
+<h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><p>完成上述步骤后，gaussian的安装已经完成，但此时打开cmd是无法在任意位置调用的，此时只有指定Gaussian所在的路径才能调用</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695221699441-5dadcb5e-c88f-440f-8700-9f500062780e.png"></p>
+<h4 id="找到配置环境变量的设置"><a href="#找到配置环境变量的设置" class="headerlink" title="找到配置环境变量的设置"></a>找到配置环境变量的设置</h4><p>配置环境变量可以直接搜索环境变量</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695221757562-f5e26df9-d285-42bf-9e78-c5879edbe3a8.png"></p>
+<p>或者在设置中选择系统信息 高级系统设置 再编辑环境变量</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695221896612-d3f9d299-e423-4637-ad16-2ed2ecf99eab.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695221947178-402670d2-5ad8-45a1-af87-3539ad197d74.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695222011438-18d0929c-c3d2-4c7c-bff4-b45346eee4bb.png"></p>
+<p>此时可以编辑用户&#x2F;系统的系统变量</p>
+<pre><code>- &lt;font style=&quot;background-color:#FBF5CB;&quot;&gt;若希望所有用户都可以使用就编辑系统变量，若电脑账户只有一个，或不希望别人使用的账号可以使用编辑用户变量，此处以用户变量为例&lt;/font&gt;
+</code></pre>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695222136779-c48febd6-618e-4fd7-8d24-58f97c12d9e3.png"></p>
+<h4 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h4><p>需要以下几个环境变量</p>
+<p>变量名：GAUSS_EXEDIR	变量值：D:\gaussian\G16W</p>
+<p>变量名：GAUSS_SCRDIR	变量值：D:\gaussian\src</p>
+<p>:::warning<br>注：</p>
+<p>GAUSS_EXEDIR的变量值是安装软件的所在文件夹</p>
+<p>GAUSS_SCRDIR的变量值可以自行设置，建议在G16W文件夹所在文件夹新建一个src，并将其当作变量值</p>
+<p>:::</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695222783098-72b686f1-8dc9-4f42-8ec8-9cdc38bb2037.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695222814899-e8fafcca-aa16-4028-aac4-403a9ccf77e1.png"></p>
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695223076428-e9c27d1c-7a48-4bd2-b52d-acc4a8af92e5.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695223260297-b6816c90-69b7-4974-add4-37a55b3975a6.png"></p>
+<p>选择新建 填写GAUSS_EXEDIR和GAUSS_SCRDIR的路径即可</p>
+<p>完成后确定即可</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>完成环境变量的配置后，可以在电脑中任意位置选择文件夹作为您的工作区，此时可以使用Gaussian自带的test文件进行测试，查看软件是否可以正常运行</p>
+<p>我们打开G16W文件夹，可以看到里面包含有tests文件夹，里面包含有测试用的文件</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695223559711-dcecb81b-e86c-442d-98c9-bb0448c2f74d.png"></p>
+<p>进入D:\gaussian\G16W\tests\gjf （即tests里面的gjf文件夹），随意复制一个gjf文件到任意文件夹</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695223752959-92370e5e-c8b2-48db-b4cd-b82e027b6ea7.png"></p>
+<p>打开一个新的终端并进入此文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># g16 测试文件 输出结果记录的文件</span><br><span class="line"># 例子</span><br><span class="line">g16 test0001.gjf test0001.log</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695224899108-61dd86bc-194f-443e-911e-88ace0ec1a96.png"></p>
+<p>此时，若一切正常，并正常输出test0001.log</p>
+<p>可以打开log文件，与tests&#x2F;amd64文件夹中gz压缩包中的log进行对比，若没有差别即完成了g16的安装</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695225303211-4d72e744-336d-4b45-a856-a1828989b4ac.png" alt="G16W&#x2F;tests&#x2F;amd64"></p>
+<p>:::warning<br>注：一般来说看到log文件里面有软件信息，运行结果都是没有问题的，不需要严谨到与给出的log完全一致</p>
+<p>:::</p>
+<h3 id="Gauss-View的安装与配置"><a href="#Gauss-View的安装与配置" class="headerlink" title="Gauss View的安装与配置"></a>Gauss View的安装与配置</h3><p>在完成了Gaussian 16的安装后，可以安装配套的Gauss View</p>
+<p>win中gv的安装方法和Gaussian一致，以下为详细过程</p>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>我使用的版本是gv 6</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695227990106-bce93c3c-3657-4744-aa0a-aa888cb2dd17.png"></p>
+<p>密钥在文件serial.txt中</p>
+<p>选择安装路径</p>
+<p>我选择安装到Gaussian所在的G16W文件夹中，这样可以不用再去配置环境变量</p>
+<p>:::warning<br>若独立安装在其他文件夹，环境变量的配置方法请参照2<br>记得修改环境名即可，环境名可以自定义，建议使用全大写</p>
+<p>:::</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695228047711-918ff7ee-8857-48b8-97ab-95cb526b9522.png"></p>
+<p>接着就是不断地Next</p>
+<p>可以选择快捷方式所在的地方</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695228373428-0eb1c6eb-f3cf-4c7b-8fc7-ac906e863e5e.png"></p>
+<p>一直到选择gv打开的文件夹，这里依照自己需求进行选择</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695228276605-17cb3785-b648-4f4f-b114-bb43fe7a9636.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695228408905-17dd3ef7-f1e4-4e92-a4bf-e9c5af306ab6.png"></p>
+<p>接下来intsall即可</p>
+<h4 id="测试-1"><a href="#测试-1" class="headerlink" title="测试"></a>测试</h4><p>启动cmd，输入gview，若可以启动Gauss view即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gview</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695228793836-f3e812d0-7043-4881-a4fb-2204585e0a9b.png"></p>
+<h2 id="Linux中的安装与配置"><a href="#Linux中的安装与配置" class="headerlink" title="Linux中的安装与配置"></a>Linux中的安装与配置</h2><blockquote>
+<p>💫在Linux中安装Gaussian和Gauss viem的大致过程与Windows其实相差不多</p>
+<p>主要的差别在安装与环境变量的配置中，以下也将详细讲解在Linux中如何安装与配置Gaussian和Gauss View</p>
+<ol>
+<li>确定系统支持的指令集</li>
+<li>安装</li>
+<li>环境变量的配置</li>
+<li>测试</li>
+<li>Gauss View的安装</li>
+</ol>
+</blockquote>
+<h3 id="确定系统支持的指令集"><a href="#确定系统支持的指令集" class="headerlink" title="确定系统支持的指令集"></a>确定系统支持的指令集</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+<p>输入后可能会出现多段，查看其中一段的flags，查看支持<font style="background-color:#FBDE28;">sse42</font>还是<font style="background-color:#FBDE28;">avx2</font></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695281169912-a6465140-dc89-4f12-9fba-bc8fb04d4ae1.png"></p>
+<p>根据支持的指令集选择安装的Gaussian版本</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1695281394734-6f4a5e9b-1700-4b63-ab02-15bfcc239f9f.png">	</p>
+<p>:::warning<br>注：若两个都支持，优先选择avx2</p>
+<p>:::</p>
+<h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>新建gaussian文件夹并放置于希望安装软件的路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt; 文件名字 &gt;</span><br><span class="line">mkdir /media/ubuntu-serve-2/test</span><br></pre></td></tr></table></figure>
+
+<p>将压缩包放置于gaussion文件夹内，解压</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -jxvf _Getintopc.com_G16-A03-AVX2.tbz</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># linux中可以通过修改对应文件来配置环境变量</span><br><span class="line"># 我习惯配置.bashrc文件，因此，此处以修改此文件为参考</span><br><span class="line">vim ~/.bashrc</span><br><span class="line"></span><br><span class="line"># 在.bashrc文件最下面添加以下语句</span><br><span class="line"># g16root的路径为g16文件所在的文件夹</span><br><span class="line">export g16root=/media/ubuntu-2/fosu2_1/Gaussion</span><br><span class="line">export GAUSS_SCRDIR=$g16root/tmp</span><br><span class="line">source $g16root/g16/bsd/g16.profile</span><br><span class="line"></span><br><span class="line"># 刷新环境变量</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试-2"><a href="#测试-2" class="headerlink" title="测试"></a>测试</h3><p>在任意位置新建测试文件夹，复制test文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 在文件夹中进行复制，假设当前文件夹为test</span><br><span class="line">cp -r /安装的路径/g16/tests/com/test0001.com ./</span><br><span class="line">cp -r /安装的路径/g16/tests/com/test0001.com/ &lt; 指定路径 &gt;</span><br><span class="line"># 测试</span><br><span class="line">g16 &lt; test0001.com &gt; test0001.log</span><br></pre></td></tr></table></figure>
+
+<p>完成后查看test0001.log，查看输出结果是否正常</p>
+<h3 id="Gauss-View的安装"><a href="#Gauss-View的安装" class="headerlink" title="Gauss View的安装"></a>Gauss View的安装</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 将压缩包放置在gaussion文件夹中即g16所在文件夹</span><br><span class="line"># 解压</span><br><span class="line">sudo tar -jxvf g_v6.tar.bz2</span><br><span class="line"></span><br><span class="line"># 测试</span><br><span class="line"># 若可以出现页面，表明安装成功</span><br><span class="line">gv</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>第一次编辑 2023&#x2F;9&#x2F;21   1: 05</p>
+<p>第二次编辑 2023&#x2F;9&#x2F;21   16:12</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eggle0v0.github.io">菜菜菜鸡_蛋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eggle0v0.github.io/2023/09/21/gaussian%E7%9A%84%E5%AE%89%E8%A3%85/">https://eggle0v0.github.io/2023/09/21/gaussian%E7%9A%84%E5%AE%89%E8%A3%85/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eggle0v0.github.io" target="_blank">EGG-ss Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2023/09/21/check%E7%9A%84%E4%BD%BF%E7%94%A8/" title="check的使用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">check的使用</div></div><div class="info-2"><div class="info-item-1">使用过程1、进入环境12345# cmd中conda activate &lt;环境名&gt;# git bash中source activate &lt;环境名&gt;  注check脚本使用的都是python自带的库，如果本地环境有python，可以不使用conda进入环境 2、运行12345python &lt;正常情况下文件的行数&gt; &lt;&quot;所有文件所在的文件夹路径&quot;&gt;# 示例python check.py 937 &quot;C:\Users\49388\Desktop\Raman\24,25,26\all&quot;python check.py 937 C:/Users/49388/Desktop/Raman/24,25,26/all  注路径中使用“&quot;作为路径分割一定要用””包起来，不然就会出现路径不存在的情况这是因为“&quot;常被视为转义字符，因此读取后会自动消失当然，也可以自己手动将“&quot;全部更换为“&#x2F;“，这样就不需要写””来包裹路径了 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">菜菜菜鸡_蛋</div><div class="author-info-description">では、ゲームを始めましょう</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/EggLe0v0/"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我很懒，什么都不写</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#win%E4%B8%AD%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">win中的安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E4%B8%8E%E6%BF%80%E6%B4%BB"><span class="toc-number">1.1.</span> <span class="toc-text">安装与激活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.</span> <span class="toc-text">环境变量配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.2.1.</span> <span class="toc-text">找到配置环境变量的设置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA"><span class="toc-number">1.2.2.</span> <span class="toc-text">新建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E8%BE%91"><span class="toc-number">1.2.3.</span> <span class="toc-text">编辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.3.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gauss-View%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">Gauss View的安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Linux中的安装与配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AE%E5%AE%9A%E7%B3%BB%E7%BB%9F%E6%94%AF%E6%8C%81%E7%9A%84%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-number">2.1.</span> <span class="toc-text">确定系统支持的指令集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-1"><span class="toc-number">2.2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.</span> <span class="toc-text">配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95-2"><span class="toc-number">2.4.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gauss-View%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">2.5.</span> <span class="toc-text">Gauss View的安装</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/13/hello-world/" title="Hello World">Hello World</a><time datetime="2025-04-12T16:13:06.341Z" title="发表于 2025-04-13 00:13:06">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/22/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E7%BB%B4%E6%8A%A4/" title="计算平台维护">计算平台维护</a><time datetime="2024-03-22T10:55:00.000Z" title="发表于 2024-03-22 18:55:00">2024-03-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/29/Pymol%E5%AE%89%E8%A3%85%E4%B8%8Econda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Pymol安装与conda环境配置">Pymol安装与conda环境配置</a><time datetime="2023-11-28T17:26:00.000Z" title="发表于 2023-11-29 01:26:00">2023-11-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/30/H%E6%8C%87%E6%95%B0II/" title="H指数II">H指数II</a><time datetime="2023-10-30T15:50:00.000Z" title="发表于 2023-10-30 23:50:00">2023-10-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/30/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" title="盛最多水的容器">盛最多水的容器</a><time datetime="2023-10-30T11:57:00.000Z" title="发表于 2023-10-30 19:57:00">2023-10-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 菜菜菜鸡_蛋</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

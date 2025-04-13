@@ -1,0 +1,164 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>H指数II | EGG-ss Blog</title><meta name="author" content="菜菜菜鸡_蛋"><meta name="copyright" content="菜菜菜鸡_蛋"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="使用二分法 具体解题过程还需要琢磨一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="H指数II">
+<meta property="og:url" content="https://eggle0v0.github.io/2023/10/30/H%E6%8C%87%E6%95%B0II/index.html">
+<meta property="og:site_name" content="EGG-ss Blog">
+<meta property="og:description" content="使用二分法 具体解题过程还需要琢磨一下">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eggle0v0.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2023-10-30T15:50:00.000Z">
+<meta property="article:modified_time" content="2025-04-13T17:58:16.143Z">
+<meta property="article:author" content="菜菜菜鸡_蛋">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://eggle0v0.github.io/img/avatar.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "H指数II",
+  "url": "https://eggle0v0.github.io/2023/10/30/H%E6%8C%87%E6%95%B0II/",
+  "image": "https://eggle0v0.github.io/img/avatar.jpg",
+  "datePublished": "2023-10-30T15:50:00.000Z",
+  "dateModified": "2025-04-13T17:58:16.143Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "菜菜菜鸡_蛋",
+      "url": "https://eggle0v0.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/./img/favicon.jpg"><link rel="canonical" href="https://eggle0v0.github.io/2023/10/30/H%E6%8C%87%E6%95%B0II/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'H指数II',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/mycss.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(./img/bg2.png);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-file-text"></i><span> Blog</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Linux/"><i class="fa-fw fas fa-linux"></i><span> Linux</span></a></li><li><a class="site-page child" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/"><i class="fa-fw fas fa-th"></i><span> 环境配置与使用</span></a></li><li><a class="site-page child" href="/categories/Code/"><i class="fa-fw fas fa-code"></i><span> Code</span></a></li><li><a class="site-page child" href="/categories/%E7%BD%91%E7%BB%9C/"><i class="fa-fw fas fa-wifi"></i><span> 网络</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div></div></div></div><div class="post type-Code" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">EGG-ss Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">H指数II</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fa fa-file-text"></i><span> Blog</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/categories/Linux/"><i class="fa-fw fas fa-linux"></i><span> Linux</span></a></li><li><a class="site-page child" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BD%BF%E7%94%A8/"><i class="fa-fw fas fa-th"></i><span> 环境配置与使用</span></a></li><li><a class="site-page child" href="/categories/Code/"><i class="fa-fw fas fa-code"></i><span> Code</span></a></li><li><a class="site-page child" href="/categories/%E7%BD%91%E7%BB%9C/"><i class="fa-fw fas fa-wifi"></i><span> 网络</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/categories/%E7%94%9F%E6%B4%BB/"><i class="fa-fw fas fa-coffee"></i><span> 生活</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">H指数II</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-30T15:50:00.000Z" title="发表于 2023-10-30 23:50:00">2023-10-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-13T17:58:16.143Z" title="更新于 2025-04-14 01:58:16">2025-04-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Code/">Code</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1698680924391-60dcec9b-0b92-4818-ab81-ebc1c777339c.png"><img src="https://cdn.nlark.com/yuque/0/2023/png/25884382/1698680948398-fd53fc7d-aff7-4824-b820-a3c268f33ed1.png"></p>
+<p>使用二分法</p>
+<p>具体解题过程还需要琢磨一下</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://eggle0v0.github.io">菜菜菜鸡_蛋</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://eggle0v0.github.io/2023/10/30/H%E6%8C%87%E6%95%B0II/">https://eggle0v0.github.io/2023/10/30/H%E6%8C%87%E6%95%B0II/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://eggle0v0.github.io" target="_blank">EGG-ss Blog</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/./img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2023/10/30/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" title="盛最多水的容器"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">盛最多水的容器</div></div><div class="info-2"><div class="info-item-1">   看到题目，首先想到的是两个for 这样可以遍历所有的情况，但是会超时 1234567891011121314151617181920class Solution(object):    def maxArea(self, height):        &quot;&quot;&quot;        :type height: List[int]        :rtype: int        &quot;&quot;&quot;        area = 0        i = 0        j = len(height) - 1        for i in range(j): # 从左边开始遍历左边的高            for j in range(j, i, -1): # 从右边开始遍历右边的高            		# 最矮的作为高，计算面积                realheight = min(height[i], height[j])                realarea = realheight * (j -...</div></div></div></a><a class="pagination-related" href="/2023/11/29/Pymol%E5%AE%89%E8%A3%85%E4%B8%8Econda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Pymol安装与conda环境配置"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Pymol安装与conda环境配置</div></div><div class="info-2"><div class="info-item-1">1、学术开源版2、商业版2.1 安装 选择all users :::warningjust me 也可以，但是会覆盖掉你原来的py环境，如果需要复原需要重新配置已经安装好的本地python的环境，不方便将他引入到conda中进行管理也有可能是我安装的时候选了配置环境变量的选项导致的 :::  选择希望的安装路径，安装目录名字就是conda中环境的名字，后续再修改会导致快捷方式无法使用，修复比较麻烦 注：安装路径中不能带有空格 安装目录需要空  不要点第二个，不然会将原来的py本地环境覆盖，想要直接调用本地的python就需要重新配置环境变量 2.2 破解  将压缩包里面这些内容复制到安装目录中，覆盖原来的文件 启动pymol   选择复制到文件夹里面的lic文件 完成后显示激活成功 注：这个无法激活，暂时不知道什么原因，但是pymol本身是正常的 2.3 添加到conda中 我们查看conda环境，可以看到pymol这个版本的环境已经创建好了，但是他没有名字 没有名字我们无法启动对应的环境 这个时候需要修改储存Anaconda非默认路径虚拟环境信息的文件 -&gt;...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">菜菜菜鸡_蛋</div><div class="author-info-description">では、ゲームを始めましょう</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/EggLe0v0/"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">我很懒，什么都不写</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/13/hello-world/" title="Hello World">Hello World</a><time datetime="2025-04-12T16:13:06.341Z" title="发表于 2025-04-13 00:13:06">2025-04-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/03/22/%E8%AE%A1%E7%AE%97%E5%B9%B3%E5%8F%B0%E7%BB%B4%E6%8A%A4/" title="计算平台维护">计算平台维护</a><time datetime="2024-03-22T10:55:00.000Z" title="发表于 2024-03-22 18:55:00">2024-03-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/11/29/Pymol%E5%AE%89%E8%A3%85%E4%B8%8Econda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="Pymol安装与conda环境配置">Pymol安装与conda环境配置</a><time datetime="2023-11-28T17:26:00.000Z" title="发表于 2023-11-29 01:26:00">2023-11-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/30/H%E6%8C%87%E6%95%B0II/" title="H指数II">H指数II</a><time datetime="2023-10-30T15:50:00.000Z" title="发表于 2023-10-30 23:50:00">2023-10-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/10/30/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/" title="盛最多水的容器">盛最多水的容器</a><time datetime="2023-10-30T11:57:00.000Z" title="发表于 2023-10-30 19:57:00">2023-10-30</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 菜菜菜鸡_蛋</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
